@@ -1,0 +1,139 @@
+:root {
+  --custom-bg-image: url('https://images8.alphacoders.com/136/thumb-1920-1363709.png');
+  --accent-cyan: #38bdf8;
+  --accent-amber: #fbbf24;
+  --accent-indigo: #818cf8;
+  --card-bg: rgba(13, 17, 23, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.12);
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #f1f5f9;
+  background-color: #0b0f17;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Fullscreen Background Layer using CSS Variable */
+#bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: var(--custom-bg-image);
+  transition: background-image 0.5s ease-in-out;
+}
+
+/* Ambient Readability Overlay with Subtle Vignette */
+#overlay-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 50% 40%, rgba(11, 15, 23, 0.6) 0%, rgba(11, 15, 23, 0.92) 100%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Distinctive Text Borders */
+/* 1. Name Frame with Corner Accents and Glow */
+.hero-name-card {
+  position: relative;
+  padding: 1.75rem 2.5rem;
+  border-radius: 1.5rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 
+    0 0 35px -8px rgba(56, 189, 248, 0.28),
+    inset 0 0 25px -10px rgba(56, 189, 248, 0.2);
+  backdrop-filter: blur(16px);
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-name-card:hover {
+  border-color: rgba(56, 189, 248, 0.7);
+  box-shadow: 
+    0 0 45px -5px rgba(56, 189, 248, 0.4),
+    inset 0 0 30px -5px rgba(56, 189, 248, 0.3);
+  transform: translateY(-3px);
+}
+
+/* 2. Technical Cyber-Bracket Border for ID */
+.bracket-tag {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.6rem;
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px dashed rgba(251, 191, 36, 0.5);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.bracket-tag:hover {
+  background: rgba(251, 191, 36, 0.14);
+  border-color: rgba(251, 191, 36, 0.9);
+  box-shadow: 0 0 20px -3px rgba(251, 191, 36, 0.3);
+}
+
+.bracket-tag::before {
+  content: '[';
+  position: absolute;
+  left: 0.45rem;
+  color: #fbbf24;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.bracket-tag::after {
+  content: ']';
+  position: absolute;
+  right: 0.45rem;
+  color: #fbbf24;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+/* 3. Double-Stroke Ribbon Border for University */
+.university-ribbon {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  outline: 2px solid rgba(255, 255, 255, 0.08);
+  outline-offset: 4px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  transition: all 0.3s ease;
+}
+
+.university-ribbon:hover {
+  outline-color: rgba(56, 189, 248, 0.5);
+  border-color: rgba(56, 189, 248, 0.7);
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(255, 255, 255, 0.02));
+}
+
+/* Glass Panels */
+.glass-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+}
